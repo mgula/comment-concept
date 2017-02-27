@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="description" content="version 1.0.1">
+        <meta name="author" content="Michael Ruane, DVRPC">     
+        <title> test </title>
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" rel="stylesheet" type="text/css">
+        <link href="lib/assets/typeahead.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="lib/core/dyna.css"><!--declare stylesheet for desired icon font set  -->
+        <link rel="stylesheet" href="lib/core/core.css">
+        <link rel="stylesheet" href="lib/style.css" />
+        <style>
+        #loading {
+                position: absolute;
+                width: 220px;
+                height: 19px;
+                top: 50%;
+                left: 50%;
+                margin: -10px 0 0 -110px;
+                z-index: 1028;
+            }
+        .omodal{
+            position: absolute;
+            width: 220px;
+            height: 19px;
+            top: 50%;
+            left: 50%;
+            margin: -10px 0 0 -110px;
+            z-index: 1028;
+            display: none;
+            overflow: hidden;
+            outline: 0px none;
+        }
+        @media screen and (min-width: 768px) {
+                .modal-dialog {
+                    width:730px!important;
+                }
+            }
+            @media (max-width: 1360px){
+                .search-container{
+                    width:250px!important;
+                }
+            }
+            @media (max-width: 1270px) {
+                .navbar .navbar-brand {
+                    font-size: 18px;
+                    float: left;
+                }
+                .leaflet-control-attribution {
+                    display: none;
+                }
+                
+            }
+            @media (max-width: 1200px) {
+               .search-container {
+                    width: 200px!important;
+                }
+            }
+            @media (max-width: 960px) {
+               .search-container {
+                    display :none!important;
+                }
+
+            }
+            @media (max-width: 768px){
+                .search-container {
+                    display: table!important;
+                    width: 100%!important;
+                }
+                .logo-container{
+                    padding:0px;
+                }
+                .navbar-nav .open .dropdown-menu{
+                    background-color:#fff;
+                }
+                #infobox_ {
+                    right:10px;
+                }
+            }
+            @media (max-width: 376px){
+                .infowrap{
+                    padding:20px;
+                    height:auto;
+                }
+                #infobox_ {
+                    display:none;
+                }
+            }
+            /* Print Handling */
+            @media print {
+                .navbar, .toggle, #sidebar {
+                    display: none !important;
+                }
+            }
+        </style> 
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top oheader">
+        <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            <div class="navbar-brand">
+                <div class="logo-container"><img src="lib/images/wilmapco.png" height="50" /></div>
+            </div>
+        </div>
+        <div id="navbar-links" class="navbar-collapse collapse">
+            <form id="nav_search" class="navbar-form navbar-right mapUI" style="display:none;">
+                    <div class="input-group search-container">
+                        <input id="searchbox" type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                    </div>
+            </form>
+            <ul id="landing" class="nav navbar-nav">
+                <li><a href="#home" class="landingLink" data-tab="home" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="glyphicon glyphicon-info-sign"></i>&nbsp;Info</a></li>
+                <li id="maplink" class="landingUI" style="display:none;"><a href="#map" data-tab="map" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="glyphicon glyphicon-map-marker"></i>&nbsp;&nbsp;View Map</a></li>
+            </ul>
+           
+        </div><!--/.navbar-collapse -->
+    </div>
+    <!--landing pages-->
+        <div id="oFFlanding" class="landing fade in landtab-content landingUI">
+            
+            <!--home tab-->
+                <div id="home" class="tab-pane active in landing-content" style="color:#333333;">
+                    <div class="center-block col-md-10" style="float:none;"> 
+                    </div>
+                    <div class="center-block col-md-10" style="float:none;">
+                        <div class="col-md-7 content">
+						<p> just some testing </p>
+					    </div> 
+                        <div class="col-md-5">     
+                        </div>
+                    </div>
+                </div>
+		</div>
+        
+    <!--Map and Sidebar-->
+       <div class="row ocontent mapUI" id="container">
+            <div class="col-sm-4 col-lg-3" id="sidebar">
+				
+                <div class="tab-content" style="padding-top: 10px;">
+                        <!--ADD LAYER CONTROL GROUPS HERE -->
+                        <!---Layer Group 1-->
+                        <div class="panel-group legend">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+									<a href="modal_1.html" data-toggle="modal" data-target="#modal_1" ><div class="panelinfo group1_panel"> </div></a>
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_" href="#Group_1">
+                                        <div class="panellink group1_panel">
+                                            <span>group 1</span>
+                                        </div>
+                                    </a>
+                                    <a class="checked_all togglebox"></a>
+                                </div> 
+                                <div id="Group_1" class="panel-collapse collapse in">
+                                    <div class="panel-body legPanel" style="padding: 0;">
+                                            <input type="checkbox" name="LayerCont" id="layer1" class="dyna layer" z-index="2">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div><!--Siderbar Close-->
+            <!---Map Pane -->
+            <div class="col-sm-8 col-lg-9 mapUI" id="mapDIV" style="display:none;">
+                <div id="loading" style="display: block;">
+                    <div class="loading-indicator">
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar progress-bar-info" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end Map and Sidebar-->
+        <!--Footer container-->
+        <div class="navbar-fixed-bottom ofooter">
+            <div style="height:34px;">
+        		<!-- Map UI Footer -->
+               	<div id="MapFooter" class="mapUI" style="display:none;"> 
+                    <button id="toggle" type="button" class="footer_btn" data-toggle="tooltip" title="Toggle Sidebar" style="height: 34px; padding: 5px 10px; margin-right: 10px;width:36px;"><i id="toggleIcon" class="glyphicon glyphicon-chevron-left"></i></button>
+                    <!--Info window skeleton-->
+                    <div id="infobox_" class="">
+						<a><span id="togbtn" class="glyphicon glyphicon-minus hide InfoTgl"></span></a>
+						<a><span id="dislikebtn" class="glyphicon glyphicon-thumbs-down Dislike"></span></a>
+						<a><span id="likebtn" class="glyphicon glyphicon-thumbs-up Like"></span></a>
+                        
+                        <div id="iconography"></div>
+                        <div id="infoheader" class="ihholder"><p>Click a feature to view details</p></div>
+                        <div class="infowrap">
+                            <div id="info"></div>
+                            <div id="featureName"></div>
+                        </div>   
+                    </div> 
+                </div>
+                <!-- Landing Footer -->
+                <div id="LandingFooter" class="center landingUI">
+                   	<p>test</p>
+                </div>            
+            </div>
+        </div>  
+
+        <!--Mobile InfoWindow Modal-->
+        <div class="modal fade" id="mobileInfo_modal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div id="mobileMdHeader" class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" onClick="resetHighlight()"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <div id="mobileheader"></div>
+              </div>
+              <div class="infowrap">
+                <div id="mobileinfo"></div>
+                <div id="mobilefeatureName"></div>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal --> 
+        
+		 <!-- Layer Group 1 Modal Window -->
+        <div class="modal fade" id="modal_1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">&nbsp;</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p> test </p>
+                    </div>
+                    <div class="modal-footer">
+                        
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+		
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+        <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="lib/core/dyna-icons.js"></script>
+        <script type="text/javascript" src="lib/assets/typeahead.min.js"></script>
+        <script type="text/javascript" src="lib/assets/numeral.min.js"></script>       
+        <script type="text/javascript" src="lib/actions.js"></script><!--customized mapping functions to highlight map elements -->
+        <script type="text/javascript" src="lib/map.js"></script><!--customized mapping functions to load data -->
+        <script type="text/javascript" src="lib/core/core.js"></script><!--core application functions -->
+    </body>
+</html>
