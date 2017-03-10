@@ -299,6 +299,15 @@ input[type=checkbox]:checked + label, input[type=checkbox]:checked + label > div
     color: #FFF;
     text-decoration: none;
 }
+#likebtn.sent {
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    filter: alpha(opacity=100);
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    opacity: 1;
+    color: #FFF;
+    text-decoration: none;
+}
 #dislikebtn {
     float: right;
     margin: 2px 10px 0 0;
@@ -312,6 +321,15 @@ input[type=checkbox]:checked + label, input[type=checkbox]:checked + label > div
     opacity: 0.6;
 }
 #dislikebtn.clicked {
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    filter: alpha(opacity=100);
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    opacity: 1;
+    color: #FFF;
+    text-decoration: none;
+}
+#dislikebtn.sent {
     -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     filter: alpha(opacity=100);
     -moz-opacity: 1;
@@ -346,6 +364,12 @@ input[type=checkbox]:checked + label, input[type=checkbox]:checked + label > div
     opacity: 1;
     color: #FFF;
     text-decoration: none;
+}
+#formDiv.error {
+
+}
+#formDiv.success {
+
 }
 #featureName {
     height: 45px;

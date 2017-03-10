@@ -1,5 +1,8 @@
-2016-2019 TIP Map
+Public comment tool testing
 =============
-
-[Leaflet](http://leafletjs.com/)-powered map of Wilmapco's TIP projects. Whipped up using the DVRPC's [Open Freight App](https://github.com/DVRPCfreight/open-freight-app) framework. 
-
+relevant code:
+ - new PHP files
+ - lines 47-57 of /lib/actions.js
+ - end of /lib/style.css
+ - lines 281-373 of /lib/core/core.css
+ - lines 308-387 of /lib/core/core.js
