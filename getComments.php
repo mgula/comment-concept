@@ -3,11 +3,11 @@
 
 $con = mysqli_connect("127.0.0.1", "wilmapco", "testing", "testDB");
 
-$request = "SELECT * FROM Comments";
+$request = "SELECT * FROM CommentTable1";
 
 $result = mysqli_query($con, $request);
 
 while($row = mysqli_fetch_array($result)) {
-    echo $row['com'] . PHP_EOL;
+    echo "Name: ". $row['name'] . " | Comment: " . $row['comment'] . " | Feature: " . $row['feature'] . " | Vote: " . $row['vote'] . PHP_EOL;
 }
 ?>
