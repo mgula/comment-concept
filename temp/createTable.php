@@ -2,9 +2,10 @@
 /*template for creating a new table*/
 $con = mysqli_connect("127.0.0.1", "wilmapco", "testing", "testDB");
 
-$request = "CREATE TABLE CommentTable1 (
+$request = "CREATE TABLE CommentTable2 (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
-name VARCHAR(20),
+name VARCHAR(40),
+email VARCHAR(40),
 comment VARCHAR(500),
 feature VARCHAR(100),
 vote VARCHAR(7)

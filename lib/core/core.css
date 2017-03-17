@@ -365,12 +365,6 @@ input[type=checkbox]:checked + label, input[type=checkbox]:checked + label > div
     color: #FFF;
     text-decoration: none;
 }
-#formDiv.error {
-
-}
-#formDiv.success {
-
-}
 #featureName {
     height: 45px;
 }

@@ -140,13 +140,23 @@
                     </div>
                     <div class="center-block col-md-10" style="float:none;">
                         <div class="col-md-7 content">
+						<!-- delete this later-->
 							<p> click button for database contents. </p>
 							<br>
-							<form id= "getComs" action='/getComments.php'>
+							<form id="getComs" action='/temp/getComments.php'>
 								<button type='submit'>Get Comments</button>
 							</form>
 							<div id="testComments">
 							</div>
+							<br>
+							<form id= "clearDB" action='/temp/clear.php'>
+								<button type='submit'>Clear Database</button>
+							</form>
+							<div id="DBcleared">
+							</div>
+							<br>
+							<div id="deniedstrings"> </div>
+						<!-- -->
 					    </div> 
                         <div class="col-md-5">     
                         </div>
