@@ -22,7 +22,7 @@ if ($stmt = mysqli_prepare($con, "INSERT INTO CommentTable2 (name, email, commen
 		echo "Oops! Something went wrong and we couldn't send your comment.";
 	}
 } else {
-	http_response_code(500);
+	http_response_code(501);
 	echo "Oops! There was an error.";
 }
 

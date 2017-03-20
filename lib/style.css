@@ -81,16 +81,19 @@ a, a:hover {
 }
 #commentForm {
 	height: 138px;
-	width: 286px;
+	width: 303px;
 	resize: none;
 }
 #nameForm {
 	height: 27px;
-	width: 286px;
+	width: 303px;
 	resize: none;
 }
 #emailForm {
 	height: 27px;
-	width: 286px;
+	width: 303px;
 	resize: none;
+}
+#formDiv {
+	height: 290px;
 }
