@@ -11,3 +11,13 @@ relevant code:
  - lines 143 - 149 of index.html
  - the temp directory
  - lines 388-420 of /lib/core/core.js
+ 
+ run web server with python:
+ 
+ `python -m http.server <port>`
+ 
+ with php (locally, for POST requests):
+ 
+ `php -S localhost:<port>`
+ 
+ 
