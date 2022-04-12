@@ -11,6 +11,8 @@ relevant code:
  - lines 143 - 149 of index.html
  - the temp directory
  - lines 388-420 of /lib/core/core.js
+
+everything else is cloned from https://github.com/DVRPCfreight/open-freight-app.
  
  run web server with python:
  
